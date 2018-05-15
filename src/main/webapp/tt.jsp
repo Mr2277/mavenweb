@@ -10,14 +10,11 @@
 <head>
     <title>Title</title>
     <script src="${pageContext.request.contextPath}/jquery.min.js"></script>
-
 </head>
 <body>
 <script language="javascript">
-    if(window.jQuery || window.$){
-        alert("引入jquery")
-    }else{
-        alert("没有引入jquery")
+    if(typeof jQuery == 'undefined'){
+        window.alert("没有jquery");
     }
 </script>
 </body>
