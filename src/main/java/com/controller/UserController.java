@@ -13,13 +13,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class UserController {
-    @RequestMapping("/dologin.do") //url
+    @RequestMapping("/login.do") //url
     public String dologin(User user, Model model) {
         //logger.info("login ....");
+        System.out.println("Controller");
         String info = loginUser(user);
         if (!"SUCC".equals(info)) {
             model.addAttribute("failMsg", "User does not exist or password error!");
-            return "jsp/fail";
+            //return "jsp/fail";
+            return "index";
         } else {
             model.addAttribute("successMsg", "login Succ!");
             model.addAttribute("name", user.getUsername());
@@ -27,8 +29,9 @@ public class UserController {
         }
     }
     private String loginUser(User user) {
-        if (isRelogin(user)) return "SUCC"; //
-
+        if (isRelogin(user))
+            return "SUCC"; //
+        System.out.println("rrr");
         return shiroLogin(user); //
     }
 
@@ -54,7 +57,9 @@ public class UserController {
         return "SUCC";
     }
     private boolean isRelogin(User user) {
+        System.out.println("tttttt");
         Subject us = SecurityUtils.getSubject();
+        System.out.println("wwww");
         if (us.isAuthenticated()) {
             return true; //
         }

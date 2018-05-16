@@ -17,7 +17,7 @@
     <script type="text/javascript" src="jquery.min.js"></script>
 </head>
 <body>
-<form action="../dologin.do" method="post">
+<form action="${pageContext.request.contextPath}/login.do" method="post">
     <table>
         <tr>
             <td><label>用户名</label></td>
