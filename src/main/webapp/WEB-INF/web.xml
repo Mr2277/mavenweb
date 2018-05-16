@@ -2,7 +2,7 @@
 <web-app>
   <display-name>demo-bstable</display-name>
   <welcome-file-list>
-    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>login.jsp</welcome-file>
   </welcome-file-list>
 
   <context-param>
